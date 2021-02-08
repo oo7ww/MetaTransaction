@@ -16,11 +16,13 @@
     "compile:dev": "./node_modules/.bin/truffle compile --network development",
     "migrate:dev": "./node_modules/.bin/truffle migrate --network development",
     "migrate:dev:reset": "./node_modules/.bin/truffle migrate --network development --reset",
-    "test:dev": "./node_modules/.bin/truffle test --network development",
+    "test:dev": "./node_modules/.bin/truffle test ./test/bouncerProxy.js --network development",
+    "test:metaTx": "./node_modules/.bin/truffle test ./test/metaTx.js --network development",
     "test:coverage": "./node_modules/.bin/solidity-coverage",
     "solium:d": "./node_modules/.bin/solium -c .soliumrc.json -d",
     "solium:f": "./node_modules/.bin/solium -c .soliumrc.json -f",
-    "solium:all": "./node_modules/.bin/solium -c .soliumrc.json -d ./contracts/"
+    "solium:all": "./node_modules/.bin/solium -c .soliumrc.json -d ./contracts/",
+    "contract_prettier": "prettier --write contracts/**/*.sol"
   },
   "keywords": [
     "ERC20",
@@ -30,7 +32,9 @@
   "author": "andreafspeziale",
   "license": "MIT",
   "dependencies": {
-    "openzeppelin-solidity": "2.3"
+    "openzeppelin-solidity": "2.3",
+    "prettier": "^2.0.5",
+    "prettier-plugin-solidity": "^1.0.0-beta.4"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
@@ -41,7 +45,7 @@
     "ganache-cli": "6.4.3",
     "solidity-coverage": "^0.6.4",
     "solium": "^1.2.5",
-    "truffle": "5.0.17",
+    "truffle": "^5.0.17",
     "truffle-flattener": "^1.2.8"
   }
 }
