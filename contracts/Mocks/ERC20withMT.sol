@@ -280,6 +280,7 @@ contract ERC20withMT is IERC20, MinterRole {
         return true;
     }
 
+    /** metaApprove */
     function metaApprove(
         address spender,
         uint256 value,

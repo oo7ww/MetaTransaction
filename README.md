@@ -1,3 +1,13 @@
+# ERC20 with MetaTransaction
+- `$ yarn`
+- `$ yarn test:metaTx`
+
+## How it works
+1. add metaApprove in ERC20withMT.sol
+2. **Signer** sign a metaTransaction: keccak256(params for metaApprove)
+3. **Miner** send transaction to call metaApprove
+4. In function **metaApprove** signature checked , allowance approved for spender and transfer reward (ERC20 token) to miner
+
 # BouncerProxy contract
 > "With economic incentive" for miners.
 
